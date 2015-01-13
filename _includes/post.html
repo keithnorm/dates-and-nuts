@@ -1,10 +1,10 @@
 {% include post/tags.html post=post %}
 <article class="blog-entry">
   <div class='row collapse'>
-    <img src="/post_images/{{ post.excerpt-image }}" class='column medium-4'>
+    <img src="{{ site.baseurl }}/post_images/{{ post.excerpt-image }}" class='column medium-4'>
     <section class="blog-entry-details column medium-8">
       <h2>
-        <a href="{{ post.url }}">{{ post.title }}</a>
+        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
       </h2>
       <p class="tags">
         {{ tags_content }}

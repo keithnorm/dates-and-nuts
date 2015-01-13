@@ -11,11 +11,11 @@
     {% assign top_posts = site.posts | filter_by_top_posts:site.data.top_posts %}
     {% for post in top_posts %}
       <li>
-        <a href='{{ post.url }}'>{{ post.title }}</a>
+        <a href='{{ site.baseurl }}{{ post.url }}'>{{ post.title }}</a>
       </li>
     {% endfor %}
   </ul>
-  <img src="/images/headshot.jpg">
+  <img src="{{ site.baseurl }}/images/headshot.jpg">
   <p>Thank you so much for visiting!</p>
   <p>-xoxo, Keith & Allison</p>
 </aside>

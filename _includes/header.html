@@ -1,5 +1,5 @@
-<header{% if page.banner-image %} style='background-image: url(/post_images/{{ page.banner-image }});' {% endif %}>
-  <img class='spacer' src="/images/4by1.png">
+<header{% if page.banner-image %} style='background-image: url({{ site.baseurl }}/post_images/{{ page.banner-image }});' {% endif %}>
+  <img class='spacer' src="{{ site.baseurl }}/images/4by1.png">
   <div class='header-content'>
     <div class='header-content-inner'>
     <nav>

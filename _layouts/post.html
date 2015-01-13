@@ -8,7 +8,7 @@ layout: default
   <section class="blog-entry-header">
     <h2>Preparation</h2>
     <div class="post-content">
-      {{ post.content | split:'<!--more-->' | last | markdownify }}
+      {{ content }}
     </div>
   </section>
 </article>
