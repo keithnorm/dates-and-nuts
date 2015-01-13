@@ -1,0 +1,9 @@
+---
+layout: default
+---
+
+<section class='blog-entries'>
+  {% for post in site.posts %}
+    {% include post.html post=post %}
+  {% endfor %}
+</section>

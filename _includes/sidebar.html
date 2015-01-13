@@ -1,0 +1,21 @@
+<aside>
+  <h5>Categories</h5>
+  <ul>
+    {% for tag in site.data.tags %}
+      <li>
+        <a href="{% tag_url tag %}">{{ tag.name }}</a></li>
+    {% endfor %}
+  </ul>
+  <h5>Most Popular</h5>
+  <ul>
+    {% assign top_posts = site.posts | filter_by_top_posts:site.data.top_posts %}
+    {% for post in top_posts %}
+      <li>
+        <a href='{{ post.url }}'>{{ post.title }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  <img src="/images/headshot.jpg">
+  <p>Thank you so much for visiting!</p>
+  <p>-xoxo, Keith & Allison</p>
+</aside>

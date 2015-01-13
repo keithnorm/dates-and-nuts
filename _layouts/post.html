@@ -1,0 +1,14 @@
+---
+layout: default
+---
+{% assign post = page %}
+
+{% include post/tags.html post=post %}
+<article class="blog-entry">
+  <section class="blog-entry-header">
+    <h2>Preparation</h2>
+    <div class="post-content">
+      {{ post.content | split:'<!--more-->' | last | markdownify }}
+    </div>
+  </section>
+</article>
