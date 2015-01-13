@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+<body{% if page.is_post %} class='post' {% endif %}>
+{% include header.html %}
+
+<div class='main-content row'>
+  <div class='column large-3 right hide-for-medium-down'>
+    {% include sidebar.html %}
+  </div>
+
+  <div class='column large-9 left'>
+    <section class='blog-entries'>
+      {% for post in site.posts %}
+        {% if post.tags contains page.tag.slug %}
+          {% include post.html post=post %}
+        {% endif %}
+      {% endfor %}
+    </section>
+  </div>
+</div>
+{% include footer.html %}
+</body>
+</html>

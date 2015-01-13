@@ -7,9 +7,6 @@ module Jekyll
     end
 
     def render(context)
-      puts "TAG IS"
-      puts @tag
-      puts context[@tag]
       "/tag/#{ context[@tag]['slug']}"
     end
   end

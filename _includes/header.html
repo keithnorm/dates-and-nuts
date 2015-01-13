@@ -1,4 +1,4 @@
-<header{% if page.is_post %} style='background-image: url(/post_images/{{ page.banner-image }});' {% endif %}>
+<header{% if page.banner-image %} style='background-image: url(/post_images/{{ page.banner-image }});' {% endif %}>
   <img class='spacer' src="/images/4by1.png">
   <div class='header-content'>
     <div class='header-content-inner'>
@@ -15,8 +15,9 @@
             </li>
 
             {% for page in site.pages %}
-              {% if page.title %}
+              {% if page.title and page.is_tag == null %}
                 <li class="{% if url == page.url %}active{% endif %}">
+                  <p>{{ page.tag }}</p>
                   <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
                 </li>
               {% endif %}
@@ -31,6 +32,9 @@
         {% include post/tags.html %}
         <h2>{{ page.title }}</h2>
         <p class='tags'>{{ tags_content }}</p>
+      {% else if page.is_tag %}
+        <h2>{{ page.tag.name }}</h2>
+        <p class='tag_headline'>{{ page.tag.description }}</p>
       {% else %}
         <h1>{{ site.title }}</h1>
         <h3>{{ site.tagline }}</h3>

@@ -12,20 +12,25 @@ $ghost: #F8F8FF;
 $body-background: $shale;
 $link-color: $autumn;
 
-p,li,ul,h1,h2,h3,h4,h5 {
-	margin: 0;
+@font-face {
+	font-family: NexaRustScriptL;
+	src: url(../fonts/nexarust/NexaRustScriptL-0.ttf);
 }
 
 body {
 	margin: 0;
 	padding: 0;
-	font: 100%/1.3 Helvetica, 'Raleway';
+	font: 100%/1.3 $light-font;
   background: $body-background;
   color: $dark;
 }
 
 body.post {
   background: $ghost;
+}
+
+p,li,ul,h1,h2,h3,h4,h5 {
+	margin: 0;
 }
 
 p, li {
@@ -39,11 +44,6 @@ a, a:link, a:visited {
 
 a:hover {
   color: lighten($autumn, 10%);
-}
-
-@font-face {
-font-family: NexaRustScriptL;
-src: url(../fonts/nexarust/NexaRustScriptL-0.ttf);
 }
 
 h1, nav h2, .instruction-header dl, dt, .blog-preview a {
@@ -160,6 +160,11 @@ header .title h3 {
 
 header .tags, header .tags a {
   color: white;
+}
+
+header .tag_headline {
+	color: white;
+	font-size: 16px;
 }
 
 article .date {
@@ -399,5 +404,4 @@ footer h2 {
     width: 100%;
     max-width: 400px;
   }
-
 }
