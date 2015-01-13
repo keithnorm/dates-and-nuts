@@ -3,7 +3,7 @@
   <ul>
     {% for tag in site.data.tags %}
       <li>
-        <a href="/tag/{{ tag.slug }}">{{ tag.name }}</a></li>
+        <a href="{{ site.baseurl }}/tag/{{ tag.slug }}">{{ tag.name }}</a></li>
     {% endfor %}
   </ul>
   <h5>Most Popular</h5>

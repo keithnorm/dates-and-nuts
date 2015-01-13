@@ -32,7 +32,7 @@
         {% include post/tags.html %}
         <h2>{{ page.title }}</h2>
         <p class='tags'>{{ tags_content }}</p>
-      {% else if page.is_tag %}
+      {% elsif page.is_tag %}
         <h2>{{ page.tag.name }}</h2>
         <p class='tag_headline'>{{ page.tag.description }}</p>
       {% else %}
