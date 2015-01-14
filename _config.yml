@@ -14,6 +14,9 @@ excerpt_separator: <!--more-->
 
 # Build settings
 markdown: kramdown
+gems:
+- ./_plugins/tag_gen
+- ./_plugins/top_posts_filter
 
 defaults:
   -
