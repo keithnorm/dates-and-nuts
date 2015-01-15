@@ -18,6 +18,8 @@
     desc "Generate and publish blog to gh-pages"
     task :deploy => [:generate] do
       Dir.mktmpdir do |tmp|
+        puts "TMP IS"
+        puts tmp
         system "cp -R _site/* #{tmp}"
         system "git checkout -B gh-pages"
         system "rm -rf *"
