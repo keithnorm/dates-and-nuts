@@ -25,6 +25,7 @@
         system "rm -rf *"
         system "cp -R #{tmp}/* ."
         message = "Site updated at #{Time.now.utc}"
+        sleep 30
         system "git add ."
         system "git commit -am #{message.shellescape}"
         system "git push production gh-pages --force"
