@@ -21,12 +21,14 @@
         system "cp -R _site/* #{tmp}"
         system "git checkout -B gh-pages"
         system "rm -rf *"
-        system "mv #{tmp}/* ."
+        system "cp -R #{tmp}/* ."
         message = "Site updated at #{Time.now.utc}"
         system "git add ."
         system "git commit -am #{message.shellescape}"
         system "git push production gh-pages --force"
         system "git checkout master"
+        system "mkdir _site"
+        system "cp -R #{tmp}/* ./_site"
         system "echo yolo"
       end
     end
