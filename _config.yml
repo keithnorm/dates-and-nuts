@@ -9,6 +9,7 @@ twitter_username: datesandnuts
 github_username:  datesandnuts
 instagram_username: datesandnuts
 tagline: 'Confessions of a real food junkie'
+paginate: 10
 
 excerpt_separator: <!--more-->
 
@@ -25,3 +26,10 @@ defaults:
       type: posts   # limit to posts
     values:
       is_post: true # automatically set is_post=true for all posts
+
+  -
+    scope:
+      path: ""      # empty string for all files
+      type: pages   # limit to posts
+    values:
+      is_page: true # automatically set is_post=true for all posts

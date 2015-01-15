@@ -1,5 +1,5 @@
 $body-font-size: 12px;
-$gutter: 20px;
+$gutter: 0.833em;
 
 $light-font: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $script-font: 'NexaRustScriptL';
@@ -8,7 +8,7 @@ $script-font: 'NexaRustScriptL';
 $shale: #d8d5d5;
 $dark: #1B1B1B;
 $autumn: #a37661;
-$ghost: #F8F8FF;
+$ghost: #faf7f7;
 $body-background: $shale;
 $link-color: $autumn;
 
@@ -26,7 +26,10 @@ body {
 }
 
 body.post {
-  background: $ghost;
+	.main-article-column {
+		background: $ghost;
+		padding-top: 0.833em;
+	}
 }
 
 p,li,ul,h1,h2,h3,h4,h5 {
@@ -106,7 +109,11 @@ header {
 	background-size: cover;
 	text-align: center;
 	position: relative;
-	margin-bottom: 20px;
+	margin-bottom: $gutter * 2;
+}
+
+.main-content {
+	margin-bottom: $gutter * 2;
 }
 
 .spacer {
@@ -175,6 +182,10 @@ article .keywords {
 	color: #A37661;
 }
 
+.blog-entry {
+	margin-bottom: 0
+}
+
 .blog-entries {
   p {
     font-size: 16px;
@@ -183,8 +194,12 @@ article .keywords {
   .blog-entry {
     background: #faf7f7;
     box-shadow: 1px 1px 1px rgba(darken($shale, 20%), .4);
-    margin-bottom: $gutter;
+    margin-bottom: $gutter * 2;
     position: relative;
+
+		&:last-of-type {
+			margin-bottom: 0
+		}
   }
 
   .row.collapse > .blog-entry-details.column {
@@ -257,15 +272,6 @@ article .keywords {
 .blog-entry-instructions dl dt {
 	font-size: 22px;
 }
-
-.blog-entry {
-	margin-bottom: 50px;
-}
-
-.blog-entries .blog-entry:last-of-type {
-	margin-bottom: 25px;
-}
-
 
 .blog-preview {
 	margin-left: 20px;

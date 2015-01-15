@@ -3,7 +3,17 @@ layout: default
 ---
 
 <section class='blog-entries'>
-  {% for post in site.posts %}
+  {% for post in paginator.posts %}
     {% include post.html post=post %}
   {% endfor %}
+
+  <!-- Pagination links -->
+  <div class="pagination">
+    {% if paginator.previous_page %}
+      <a href="{{ site.baseurl }}{{ paginator.previous_page_path }}" class="previous">Previous Page</a>
+    {% endif %}
+    {% if paginator.next_page %}
+      <a href="{{ site.baseurl }}{{ paginator.next_page_path }}" class="next">Next Page</a>
+    {% endif %}
+  </div>
 </section>

@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
   {% include head.html %}
-	<body{% if page.is_post %} class='post' {% endif %}>
+	<body{% if page.is_post or (page.is_page and page.title) %} class='post' {% endif %}>
     {% include header.html %}
 
     <div class='main-content row'>
-      <div class='column large-3 right hide-for-medium-down'>
+      <div class='aside-column column large-3 right hide-for-medium-down'>
         {% include sidebar.html %}
       </div>
 
-      <div class='column large-9 left'>
+      <div class='main-article-column column large-9 left'>
         {{ content }}
       </div>
     </div>
